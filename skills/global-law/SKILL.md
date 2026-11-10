@@ -11,7 +11,7 @@ license: CC0-1.0
 metadata:
   author: Lexifina
   connector: https://global-law.lexifina.com/mcp
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Global law
@@ -24,9 +24,14 @@ undated and uncited; the record is neither.
 ## Requirements
 
 The **Global law** MCP server must be connected: `https://global-law.lexifina.com/mcp` (Streamable HTTP,
-no account or key). In Claude Code: `claude mcp add --transport http global-law https://global-law.lexifina.com/mcp`.
-If its tools (`find_provision`, `read_law`, ...) are not available, say so, give that command, and
-do not answer the legal question from memory.
+no account or key). It comes with the Global law plugin or extension. If its tools (`find_provision`,
+`read_law`, ...) are not available, say so and do not answer the legal question from memory. Tell the
+user how to connect it:
+
+- Plugin or extension installed: enable it again or reinstall it (Claude Code: `/plugin`, then enable
+  **global-law**; Gemini CLI: `gemini extensions install https://github.com/lexifina/global-law-plugin`).
+- Skill copied on its own, without the plugin: add the server
+  (Claude Code: `claude mcp add --transport http global-law https://global-law.lexifina.com/mcp`).
 
 ## How to answer
 
@@ -35,6 +40,9 @@ do not answer the legal question from memory.
    country. It returns file paths such as `germany/bund/acts/grundgesetz/artikel/001.md`. If you
    do not know which jurisdictions exist, `list_jurisdictions` (without arguments it lists
    countries; with `jurisdiction` it lists that country's records and how far each reaches).
+   To browse an act or a code instead of looking up one provision, `list_provisions` with a corpus
+   or folder path (for example `united-states/federal/usc/title-11`) lists its provisions with
+   their headings as in force on a date; `by_folder` gives one row per act in a folder of acts.
 2. **Read it on the right date.** `read_law` with the path and `date` (YYYY-MM-DD) when the
    question is about a past or future day; leave `date` out for today. The answer gives the text,
    the law that last changed it, the next change, the official text link and a pincite.
@@ -42,6 +50,9 @@ do not answer the legal question from memory.
    law that changed it; `compare_dates` for what changed between two dates.
 4. **Search when there is no citation.** `search_law` with words and a `jurisdiction` (searching
    every country is slow); `phrase_history` for when words entered or left the law.
+5. **What depends on it.** `what_else_changes` with the path (and `date`) lists the provisions that
+   cite it or use a term it defines. Use it before a text search when asked what relies on a
+   provision.
 
 ## How to write the answer
 

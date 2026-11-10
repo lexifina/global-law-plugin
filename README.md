@@ -1,3 +1,5 @@
+<img src="assets/logo-400.png" alt="Global law" width="96">
+
 # Global law plugin
 
 The hosted **Global law** MCP server, packaged for Claude Code, Cursor, Gemini CLI and Grok Build, with skills that answer legal questions from the **Global law** record: the
@@ -15,8 +17,6 @@ account, no key and no download.
 | [`citation-check`](skills/citation-check/SKILL.md) | Checking the legislation cited in a brief, contract or memo against the record |
 
 ## Install
-
-The server is `https://global-law.lexifina.com/mcp` (Streamable HTTP). It needs no account, no key and no download.
 
 **Claude Code** (plugin: the server and the skills)
 
@@ -50,6 +50,11 @@ the MCP server connected.
 - "What did Article 1 of the German Basic Law say on 1 January 1950, and which law has changed it since?"
 - "Which laws have changed 11 U.S.C. § 1182 since 2019, and what did each change do?"
 - "Check the citations in this paragraph as of 1 June 2023: ..."
+
+## Tests
+
+`python tests/run_cases.py` asks each question in [tests/cases.json](tests/cases.json) through Claude Code with only
+this plugin, and fails if the expected skill or MCP tools were not used. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## The record
 

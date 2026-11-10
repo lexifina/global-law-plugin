@@ -1,0 +1,32 @@
+[
+  {
+    "name": "provision-on-date",
+    "question": "What did Article 1 of the German Basic Law say on 1 January 1950?",
+    "skills": ["global-law"],
+    "tools": ["read_law"]
+  },
+  {
+    "name": "browse-act",
+    "question": "Which articles does the German Basic Law contain today? List the first twenty with their headings.",
+    "skills": ["global-law"],
+    "tools": ["list_provisions"]
+  },
+  {
+    "name": "change-trace",
+    "question": "Which laws have changed 11 U.S.C. § 1182 since 2019, and what did each change do?",
+    "skills": ["law-change-trace"],
+    "any_tools": ["provision_history", "compare_dates"]
+  },
+  {
+    "name": "depends-on",
+    "question": "Which provisions of the U.S. Code rely on the definitions in 11 U.S.C. § 1182?",
+    "skills": ["global-law", "law-change-trace"],
+    "tools": ["what_else_changes"]
+  },
+  {
+    "name": "citation-check",
+    "question": "Check the citations in this paragraph as of 1 June 2023: Under Art. 1 Abs. 3 GG the basic rights bind the legislature, the executive and the judiciary. A small business debtor is defined in 11 U.S.C. 1182.",
+    "skills": ["citation-check"],
+    "tools": ["resolve_citations"]
+  }
+]

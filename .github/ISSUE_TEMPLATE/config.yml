@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: A law is wrong or missing
+    url: https://github.com/lexifina/global-law/issues
+    about: The record itself is in lexifina/global-law. Report a wrong, missing or out-of-date text there.
+  - name: Security report
+    url: https://github.com/lexifina/global-law-plugin/security/advisories/new
+    about: Report a vulnerability privately.
