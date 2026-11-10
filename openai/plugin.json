@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "global-law",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Read the law of 200+ countries as it stood on any date, see which law changed each provision and when, and check legal citations, through Lexifina's hosted Global law MCP server (no account or key). Every answer cites the official text.",
   "author": {
     "name": "Lexifina Inc",

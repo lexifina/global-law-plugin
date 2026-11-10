@@ -77,8 +77,10 @@ packaging a call came from, for usage counts; the server is the same with or wit
 
 ## Tests
 
-`python tests/run_cases.py` asks each question in [tests/cases.json](tests/cases.json) through Claude Code with only
-this plugin, and fails if the expected skill or MCP tools were not used. See [CONTRIBUTING.md](CONTRIBUTING.md).
+The scripts and tests are on the [`tooling` branch](https://github.com/lexifina/global-law-plugin/tree/tooling), so
+this branch holds only what an AI app installs. `tests/run_cases.py` there asks each question in `tests/cases.json`
+through Claude Code with only this plugin, and fails if the expected skill or MCP tools were not used. See
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## What it sends and what is kept
 

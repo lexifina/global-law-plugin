@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.6 (2026-11-10)
+
+- The scripts and tests moved to the `tooling` branch, so `main` holds only Markdown, JSON, YAML and images.
+  The Claude directory takes scripts only from verified organizations and refused the earlier versions.
+
 ## 1.2.5 (2026-11-10)
 
 - OpenAI package: category Productivity (the portal's upload check refused Research and Business).

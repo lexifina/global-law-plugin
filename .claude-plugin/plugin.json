@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "global-law",
   "displayName": "Global law",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Three skills that answer questions about the law of about 200 countries from the record itself, through the hosted Global law MCP server (free, no account or key): global-law reads any provision as in force on any date and names the law behind it; law-change-trace follows how a provision changed and which laws changed it; citation-check checks every legal citation in a text against the law in force on the right date. Every answer cites the official publisher's text and states where the record starts and ends.",
   "author": {
     "name": "Lexifina",
