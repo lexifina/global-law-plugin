@@ -15,10 +15,9 @@ Name only tools the server has. `tools/list` on `https://global-law.lexifina.com
 
 ## Releasing
 
-The version is written in `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json` (twice),
-`.cursor-plugin/plugin.json`, `.codex-plugin/plugin.json`, `.grok-plugin/plugin.json`,
-`gemini-extension.json` and each `SKILL.md`. Change all of them together, add
-the release to `CHANGELOG.md`, tag `vX.Y.Z` and publish a GitHub release.
+Every push to `main` is picked up by the Claude directory as a new version, so raise the version with each change:
+`python scripts/set_version.py X.Y.Z` writes it to every manifest and skill (`--check` confirms they agree). Add the
+release to `CHANGELOG.md`, tag `vX.Y.Z` and publish a GitHub release.
 
 ## License
 

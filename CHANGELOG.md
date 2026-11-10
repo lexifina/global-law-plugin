@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.2 (2026-11-10)
+
+- Listing links in `plugin.json`: documentation, terms of service and support.
+- `scripts/set_version.py` sets the version in every file that states it, and checks that they agree.
+
 ## 1.2.1 (2026-11-10)
 
 - README: what the plugin sends and what the server keeps, with the privacy policy's Global law section and a
