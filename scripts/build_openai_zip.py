@@ -18,9 +18,8 @@ import zipfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SOURCE = ROOT / 'openai'
 ICON = ROOT / '.claude-plugin' / 'icon.png'
-# The category titles the portal accepts (read from platform.openai.com/plugins, November 2026).
-CATEGORIES = {'Business', 'Collaboration', 'Design', 'Developer Tools', 'Education', 'Entertainment', 'Finance',
-              'Food', 'Lifestyle', 'News', 'Productivity', 'Shopping', 'Travel'}
+# Category titles the portal's check accepted on upload (November 2026). It refused Research and Business.
+CATEGORIES = {'Productivity', 'Developer Tools'}
 PRICING = re.compile(r'(free|pricing|price|subscription|discount|trial)', re.I)
 problems = []
 

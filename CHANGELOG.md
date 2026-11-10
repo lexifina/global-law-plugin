@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.5 (2026-11-10)
+
+- OpenAI package: category Productivity (the portal's upload check refused Research and Business).
+
 ## 1.2.4 (2026-11-10)
 
 - OpenAI package: a category the portal accepts (Business) and no pricing words in the descriptions, both
