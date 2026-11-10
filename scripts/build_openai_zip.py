@@ -18,6 +18,10 @@ import zipfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SOURCE = ROOT / 'openai'
 ICON = ROOT / '.claude-plugin' / 'icon.png'
+# The category titles the portal accepts (read from platform.openai.com/plugins, November 2026).
+CATEGORIES = {'Business', 'Collaboration', 'Design', 'Developer Tools', 'Education', 'Entertainment', 'Finance',
+              'Food', 'Lifestyle', 'News', 'Productivity', 'Shopping', 'Travel'}
+PRICING = re.compile(r'(free|pricing|price|subscription|discount|trial)', re.I)
 problems = []
 
 
@@ -61,7 +65,9 @@ def check_package(manifest, servers, check_server):
     interface = openai.get('interface', {})
     for field, limit in (('displayName', 30), ('shortDescription', 30), ('longDescription', 4000), ('developerName', 80)):
         check(interface.get(field) and len(interface[field]) <= limit, f'interface.{field}: required, up to {limit}')
-    check(interface.get('category'), 'interface.category: required')
+    check(interface.get('category') in CATEGORIES, 'interface.category: one of the categories the portal accepts')
+    check(not PRICING.search(manifest.get('description', '')), 'description: no pricing words (the portal rejects them)')
+    check(not PRICING.search(interface.get('longDescription', '')), 'interface.longDescription: no pricing words (the portal rejects them)')
     capabilities = interface.get('capabilities', [])
     check(0 < len(capabilities) <= 20 and all(len(item) <= 120 for item in capabilities),
           'interface.capabilities: 1 to 20, each up to 120 characters')

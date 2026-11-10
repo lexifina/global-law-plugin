@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.4 (2026-11-10)
+
+- OpenAI package: a category the portal accepts (Business) and no pricing words in the descriptions, both
+  checked by `scripts/build_openai_zip.py`.
+
 ## 1.2.3 (2026-11-10)
 
 - OpenAI (ChatGPT and Codex directory) package: `openai/plugin.json` and `openai/mcp.json`, built into an upload
