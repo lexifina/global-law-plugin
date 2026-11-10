@@ -80,6 +80,21 @@ packaging a call came from, for usage counts; the server is the same with or wit
 `python tests/run_cases.py` asks each question in [tests/cases.json](tests/cases.json) through Claude Code with only
 this plugin, and fails if the expected skill or MCP tools were not used. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## What it sends and what is kept
+
+The plugin is text: skills, commands and the server's address. It runs nothing on your computer and reads none of
+your files. When your AI app calls a tool, the request goes to `global-law.lexifina.com` with that tool's inputs (a
+citation, a date, search words, or a passage whose citations you asked to have checked). The server answers and does
+not store the inputs or the answer.
+
+For each call the server keeps the time, the tool's name, whether it succeeded, how long it took, the kind of app that
+made it and a scrambled fingerprint of your network address, used to count callers and apply rate limits. The address
+itself is not kept. Rows are deleted after 400 days. The full text is in the
+[privacy policy](https://lexifina.com/privacy-policy#global-law).
+
+Support: [global-law@lexifina.com](mailto:global-law@lexifina.com), or
+[open an issue](https://github.com/lexifina/global-law-plugin/issues).
+
 ## The record
 
 - The MCP server's tools: [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md).

@@ -10,7 +10,7 @@ license: CC0-1.0
 metadata:
   author: Lexifina
   connector: https://global-law.lexifina.com/mcp
-  version: "1.2.0"
+  version: "1.2.1"
 ---
 
 # Law change trace

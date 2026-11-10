@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.1 (2026-11-10)
+
+- README: what the plugin sends and what the server keeps, with the privacy policy's Global law section and a
+  support address.
+
 ## 1.2.0 (2026-11-10)
 
 - Codex: `.codex-plugin/plugin.json` and a Codex marketplace file (`.agents/plugins/marketplace.json`).
