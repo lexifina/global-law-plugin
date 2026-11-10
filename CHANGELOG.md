@@ -6,7 +6,7 @@
 - Grok Build: `.grok-plugin/plugin.json`.
 - Cursor: the manifest names its skills, commands and server file, and has a display name.
 - Commands: `law-on-date`, `law-changes`, `check-citations`, `law-for-case`.
-- README: install buttons for Cursor and VS Code, and a picture of an answer.
+- README: install buttons for Cursor and VS Code, and a 30-second film of an answer.
 - The packaged server addresses carry `?client=...`, so usage can be counted by packaging.
 
 ## 1.1.0 (2026-11-10)

@@ -1,3 +1,5 @@
+**The law itself is in [lexifina/global-law](https://github.com/lexifina/global-law)**: the record this plugin reads (public domain, CC0).
+
 <img src="assets/logo-400.png" alt="Global law" width="96">
 
 # Global law plugin
@@ -14,7 +16,7 @@ account, no key and no download.
 [![Install in VS Code](https://img.shields.io/badge/Install_in-VS_Code-007ACC)](https://vscode.dev/redirect/mcp/install?name=global-law&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fglobal-law.lexifina.com%2Fmcp%3Fclient%3Dvscode-button%22%7D)
 [![Release](https://img.shields.io/github/v/release/lexifina/global-law-plugin)](https://github.com/lexifina/global-law-plugin/releases)
 
-![Claude Code answering how Article 1 of the German Basic Law changed since 1949, from the record](assets/demo.png)
+https://github.com/user-attachments/assets/00f76557-8b46-4765-9f30-c782ea297d1b
 
 | Skill | Use it for |
 | --- | --- |
@@ -80,8 +82,7 @@ this plugin, and fails if the expected skill or MCP tools were not used. See [CO
 
 ## The record
 
-- Data: [github.com/lexifina/global-law](https://github.com/lexifina/global-law) (public domain,
-  CC0), with the MCP server's tools described in [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md).
+- The MCP server's tools: [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md).
 - REST API: [lexifina.com/api/global-law](https://lexifina.com/api/global-law).
 
 The record is a research aid, not legal advice. Read the official text before relying on any
