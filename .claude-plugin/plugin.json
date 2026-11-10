@@ -24,5 +24,8 @@
     "git"
   ],
   "privacyPolicyUrl": "https://lexifina.com/privacy-policy#global-law",
+  "termsOfServiceUrl": "https://lexifina.com/terms-of-service",
+  "documentationUrl": "https://github.com/lexifina/global-law/blob/main/MCP.md",
+  "supportUrl": "https://github.com/lexifina/global-law-plugin/issues",
   "icon": ".claude-plugin/icon.png"
 }
