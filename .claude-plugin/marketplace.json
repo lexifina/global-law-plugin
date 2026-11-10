@@ -13,10 +13,10 @@
       "description": "Read any provision as in force on any date, trace each change to the law that made it, and check legal citations, from the record with official sources. Uses the hosted Global law MCP server at https://global-law.lexifina.com/mcp.",
       "homepage": "https://lexifina.com/api/global-law",
       "license": "CC0-1.0",
-      "version": "1.2.2"
+      "version": "1.2.3"
     }
   ],
   "metadata": {
-    "version": "1.2.2"
+    "version": "1.2.3"
   }
 }

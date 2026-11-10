@@ -19,6 +19,12 @@ Every push to `main` is picked up by the Claude directory as a new version, so r
 `python scripts/set_version.py X.Y.Z` writes it to every manifest and skill (`--check` confirms they agree). Add the
 release to `CHANGELOG.md`, tag `vX.Y.Z` and publish a GitHub release.
 
+## The OpenAI package
+
+`python scripts/build_openai_zip.py --check-server` checks `openai/plugin.json` and `openai/mcp.json` against
+OpenAI's limits and the live server's tools, then writes `dist/global-law-openai-<version>.zip` for upload at
+platform.openai.com/plugins.
+
 ## License
 
 Contributions are released under [CC0 1.0](LICENSE).

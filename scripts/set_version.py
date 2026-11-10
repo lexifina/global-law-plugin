@@ -10,7 +10,7 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 JSON_FILES = ['.claude-plugin/plugin.json', '.cursor-plugin/plugin.json', '.codex-plugin/plugin.json',
-              '.grok-plugin/plugin.json', 'gemini-extension.json']
+              '.grok-plugin/plugin.json', 'gemini-extension.json', 'openai/plugin.json']
 MARKETPLACE = '.claude-plugin/marketplace.json'
 SKILLS = sorted(str(p.relative_to(ROOT)).replace('\\', '/') for p in (ROOT / 'skills').glob('*/SKILL.md'))
 SKILL_VERSION = re.compile(r'^(  version: ")([^"]+)(")$', re.M)

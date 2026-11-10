@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.3 (2026-11-10)
+
+- OpenAI (ChatGPT and Codex directory) package: `openai/plugin.json` and `openai/mcp.json`, built into an upload
+  ZIP by `scripts/build_openai_zip.py`, with the listing, five positive and three negative test cases.
+
 ## 1.2.2 (2026-11-10)
 
 - Listing links in `plugin.json`: documentation, terms of service and support.

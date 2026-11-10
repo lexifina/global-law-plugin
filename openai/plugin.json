@@ -1,0 +1,113 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "global-law",
+  "version": "1.2.3",
+  "description": "Read the law of 200+ countries as it stood on any date, see which law changed each provision and when, and check legal citations, through Lexifina's free hosted Global law MCP server (no account or key). Every answer cites the official text.",
+  "author": {
+    "name": "Lexifina Inc",
+    "email": "global-law@lexifina.com",
+    "url": "https://lexifina.com"
+  },
+  "homepage": "https://lexifina.com/api/global-law",
+  "repository": "https://github.com/lexifina/global-law-plugin",
+  "license": "CC0-1.0",
+  "keywords": [
+    "law",
+    "legislation",
+    "legal-research",
+    "point-in-time",
+    "amendments",
+    "citations",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Global law",
+        "shortDescription": "Read any law on any date",
+        "longDescription": "Global law answers questions about legislation from the record itself, not from memory. The record holds the law of more than 200 countries as a dated history: every change is dated the day it took effect and names the law that made it, so a provision can be read as it stood on any date.\n\nAsk what a provision says or said on a date, which laws changed it and what each change did, what changed in a country over a period, which provisions rely on a definition, or whether the citations in a brief, contract or memo were in force on the date that matters. Every answer gives the official publisher's link and a pincite, and says where the record starts and ends.\n\nCoverage varies by country: some countries have their whole statute book and others a constitution or a few codes, and case law is held for a few jurisdictions only. When the record does not hold something, the answer says so.\n\nThe server is free and read-only, and needs no account or key. It keeps no inputs or answers. Global law is a research aid, not legal advice: read the official text before relying on any provision.",
+        "developerName": "Lexifina Inc",
+        "category": "Research",
+        "capabilities": [
+          "Read a provision as in force on any date",
+          "Find a provision from a citation or heading words",
+          "List every law that changed a provision, with in-force dates",
+          "Compare a provision between two dates, word by word",
+          "List the laws that took effect in a country over a period",
+          "Search the text of the law in one country",
+          "Find when words entered or left the law",
+          "Check the legal citations in a text against the law on a date",
+          "Find which text applies to a case commenced on a date",
+          "List the provisions that cite a provision or use its definitions"
+        ],
+        "websiteURL": "https://lexifina.com/api/global-law",
+        "supportURL": "https://lexifina.com/contact",
+        "privacyPolicyURL": "https://lexifina.com/privacy-policy#global-law",
+        "termsOfServiceURL": "https://lexifina.com/terms-of-service",
+        "defaultPrompt": [
+          "What did Article 1 of the German Basic Law say on 1 January 1950?",
+          "Which laws have changed 11 U.S.C. 1182 since 2019, and what did each do?",
+          "Check the citations in this paragraph as of 1 June 2023."
+        ],
+        "brandColor": "#CF130E",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Read a provision as it stood on a past date",
+              "prompt": "What did Article 1 of the German Basic Law say on 1 January 1950?",
+              "tools_triggered": "find_provision, read_law",
+              "expected_behavior": "Finds germany/bund/acts/grundgesetz/artikel/001.md and reads it for 1950-01-01. Quotes the German text of that date, in which paragraph 3 binds \"Gesetzgebung, Verwaltung und Rechtsprechung\", says this is the wording from 1949, and gives the official link on gesetze-im-internet.de."
+            },
+            {
+              "description": "Trace every change to a provision",
+              "prompt": "How has Article 1 of the German Basic Law changed since 1949, and which law changed it?",
+              "tools_triggered": "find_provision, provision_history",
+              "expected_behavior": "Reports one change: the 7th amendment to the Basic Law of March 1956, in force 22 March 1956, replaced \"Verwaltung\" with \"vollziehende Gewalt\" in paragraph 3. Says how far the record reaches and cites the official text."
+            },
+            {
+              "description": "List the laws that changed a US Code section",
+              "prompt": "Which laws have changed 11 U.S.C. 1182 since 2019, and what did each change do?",
+              "tools_triggered": "find_provision, provision_history",
+              "expected_behavior": "Finds united-states/federal/usc/title-11/1182.md and lists the laws that changed it in date order with their in-force dates, including Pub. L. 116-136 (CARES Act, 27 March 2020) and Pub. L. 117-151 (21 June 2022), with a sentence on what each did to the debt limit in the definition of debtor."
+            },
+            {
+              "description": "Check the citations in a passage on a date",
+              "prompt": "Check the citations in this paragraph as of 1 June 2023: Under Art. 1 Abs. 3 GG the basic rights bind the legislature, the executive and the judiciary. A small business debtor is defined in 11 U.S.C. 1182.",
+              "tools_triggered": "resolve_citations, read_law",
+              "expected_behavior": "Reports one row per citation: both resolve and were in force on 1 June 2023, each with the law that last changed it and the official link. Notes that 11 U.S.C. 1182 defines \"debtor\" for subchapter V rather than \"small business debtor\", and that its wording changed again after that date."
+            },
+            {
+              "description": "Find what relies on a provision's definitions",
+              "prompt": "Which provisions of the U.S. Code rely on the definitions in 11 U.S.C. 1182?",
+              "tools_triggered": "find_provision, what_else_changes",
+              "expected_behavior": "Lists the provisions that cite 11 U.S.C. 1182 and those in subchapter V of chapter 11 that use the terms it defines (\"debtor\", \"debtor in possession\"), with the definition's scope (\"In this subchapter\")."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Questions that are not about the law are not for this plugin",
+              "prompt": "What will the weather be in Berlin tomorrow?"
+            },
+            {
+              "description": "The record is read-only: the plugin cannot change or publish law",
+              "prompt": "Amend Article 1 of the German Basic Law to add a fourth paragraph and publish it."
+            },
+            {
+              "description": "Booking or contacting a lawyer is not supported",
+              "prompt": "Book me an appointment with an employment lawyer in Munich for next week."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Global law is free. It sells nothing and processes no payments."
+      },
+      "publication": {
+        "release_notes": "First release: read a provision as in force on any date, trace the laws that changed it, compare dates, search a country's law, and check legal citations, with the official text cited on every answer."
+      }
+    }
+  }
+}
