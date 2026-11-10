@@ -1,6 +1,6 @@
-# Global law skills
+# Global law plugin
 
-Skills for Claude and other agents that answer legal questions from the **Global law** record: the
+The hosted **Global law** MCP server, packaged for Claude Code, Cursor, Gemini CLI and Grok Build, with skills that answer legal questions from the **Global law** record: the
 law of about 200 countries kept as a dated history. Every change is dated the day it took effect and
 names the law that made it, so any provision can be read as it stood on any date, with a link to the
 official text.
@@ -16,23 +16,34 @@ account, no key and no download.
 
 ## Install
 
-**Claude Code (plugin, with the MCP server included)**
+The server is `https://global-law.lexifina.com/mcp` (Streamable HTTP). It needs no account, no key and no download.
+
+**Claude Code** (plugin: the server and the skills)
 
 ```
-/plugin marketplace add lexifina/global-law-skills
+/plugin marketplace add lexifina/global-law-plugin
 /plugin install global-law@global-law
 ```
 
-**MCP server only**
+Server only: `claude mcp add --transport http global-law https://global-law.lexifina.com/mcp`
+
+**Cursor**: install **Global law** from the Cursor Marketplace, or add the server in Settings → MCP with the URL above
+(`mcp.json` in this repo: `{"mcpServers": {"global-law": {"url": "https://global-law.lexifina.com/mcp"}}}`).
+
+**Gemini CLI**
 
 ```
-claude mcp add --transport http global-law https://global-law.lexifina.com/mcp
+gemini extensions install https://github.com/lexifina/global-law-plugin
 ```
 
-Other clients: add a Streamable HTTP server with the URL `https://global-law.lexifina.com/mcp`.
+**Grok Build**: install **global-law** from the plugin marketplace.
 
-**Skills only**: copy a folder from `skills/` into `~/.claude/skills/` (or your agent's skills
-folder). The skills need the MCP server connected.
+**Cline**: in the MCP Servers panel, add a remote server named `global-law` with the URL above (see [llms-install.md](llms-install.md)).
+
+**Any other MCP client** (Claude.ai, ChatGPT, VS Code, Zed, ...): add a remote MCP server with the URL above.
+
+**Skills only**: copy a folder from `skills/` into `~/.claude/skills/` (or your agent's skills folder). The skills need
+the MCP server connected.
 
 ## Examples
 
