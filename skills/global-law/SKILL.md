@@ -10,7 +10,7 @@ description: >
 license: CC0-1.0
 metadata:
   author: Lexifina
-  connector: https://mcp.lexifina.com/mcp
+  connector: https://global-law.lexifina.com/mcp
   version: "1.0.0"
 ---
 
@@ -23,8 +23,8 @@ undated and uncited; the record is neither.
 
 ## Requirements
 
-The **Global law** MCP server must be connected: `https://mcp.lexifina.com/mcp` (Streamable HTTP,
-no account or key). In Claude Code: `claude mcp add --transport http global-law https://mcp.lexifina.com/mcp`.
+The **Global law** MCP server must be connected: `https://global-law.lexifina.com/mcp` (Streamable HTTP,
+no account or key). In Claude Code: `claude mcp add --transport http global-law https://global-law.lexifina.com/mcp`.
 If its tools (`find_provision`, `read_law`, ...) are not available, say so, give that command, and
 do not answer the legal question from memory.
 

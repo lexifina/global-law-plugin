@@ -10,7 +10,7 @@ description: >
 license: CC0-1.0
 metadata:
   author: Lexifina
-  connector: https://mcp.lexifina.com/mcp
+  connector: https://global-law.lexifina.com/mcp
   version: "1.0.0"
 ---
 
@@ -18,7 +18,7 @@ metadata:
 
 You check the legal citations in a text against the Global law record. Requirements and citation
 rules are the ones in the `global-law` skill: the Global law MCP server must be connected
-(`https://mcp.lexifina.com/mcp`), cite the official text, pass on the record's limits, and never
+(`https://global-law.lexifina.com/mcp`), cite the official text, pass on the record's limits, and never
 confirm or correct a citation from memory.
 
 ## Steps

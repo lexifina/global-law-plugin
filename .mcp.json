@@ -2,7 +2,7 @@
   "mcpServers": {
     "global-law": {
       "type": "http",
-      "url": "https://mcp.lexifina.com/mcp"
+      "url": "https://global-law.lexifina.com/mcp"
     }
   }
 }

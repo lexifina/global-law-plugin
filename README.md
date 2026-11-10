@@ -5,7 +5,7 @@ law of about 200 countries kept as a dated history. Every change is dated the da
 names the law that made it, so any provision can be read as it stood on any date, with a link to the
 official text.
 
-The skills use the hosted **Global law MCP server** at `https://mcp.lexifina.com/mcp`. It needs no
+The skills use the hosted **Global law MCP server** at `https://global-law.lexifina.com/mcp`. It needs no
 account, no key and no download.
 
 | Skill | Use it for |
@@ -26,10 +26,10 @@ account, no key and no download.
 **MCP server only**
 
 ```
-claude mcp add --transport http global-law https://mcp.lexifina.com/mcp
+claude mcp add --transport http global-law https://global-law.lexifina.com/mcp
 ```
 
-Other clients: add a Streamable HTTP server with the URL `https://mcp.lexifina.com/mcp`.
+Other clients: add a Streamable HTTP server with the URL `https://global-law.lexifina.com/mcp`.
 
 **Skills only**: copy a folder from `skills/` into `~/.claude/skills/` (or your agent's skills
 folder). The skills need the MCP server connected.

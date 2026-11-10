@@ -9,7 +9,7 @@ description: >
 license: CC0-1.0
 metadata:
   author: Lexifina
-  connector: https://mcp.lexifina.com/mcp
+  connector: https://global-law.lexifina.com/mcp
   version: "1.0.0"
 ---
 
@@ -18,7 +18,7 @@ metadata:
 You explain how the law changed, change by change, from the Global law record: every change in it is
 dated the day it took effect and names the law that made it. Requirements and citation rules are the
 ones in the `global-law` skill: the Global law MCP server must be connected
-(`https://mcp.lexifina.com/mcp`), cite the official text, pass on the record's limits, and never
+(`https://global-law.lexifina.com/mcp`), cite the official text, pass on the record's limits, and never
 answer from memory.
 
 ## One provision
