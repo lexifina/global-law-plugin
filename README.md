@@ -1,4 +1,4 @@
-**The law itself is in [lexifina/global-law](https://github.com/lexifina/global-law)**: the record this plugin reads (public domain, CC0).
+**The law itself: [lexifina/global-law](https://github.com/lexifina/global-law)** (the record this plugin reads; public domain, CC0) · **REST API: [lexifina.com/api/global-law](https://lexifina.com/api/global-law)**
 
 <img src="assets/logo-400.png" alt="Global law" width="96">
 
@@ -83,7 +83,7 @@ this plugin, and fails if the expected skill or MCP tools were not used. See [CO
 ## The record
 
 - The MCP server's tools: [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md).
-- REST API: [lexifina.com/api/global-law](https://lexifina.com/api/global-law).
+- Every client, step by step: [MCP.md](https://github.com/lexifina/global-law/blob/main/MCP.md#install-on-each-client).
 
 The record is a research aid, not legal advice. Read the official text before relying on any
 provision.
