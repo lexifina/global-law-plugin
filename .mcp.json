@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "global-law": {
-      "type": "http",
-      "url": "https://global-law.lexifina.com/mcp?client=plugin"
-    }
-  }
-}

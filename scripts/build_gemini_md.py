@@ -6,11 +6,15 @@
 GEMINI.md is the global-law skill's body, then the other two skills' bodies one heading level down, without
 their "Rules" section (the global-law body already states those rules).
 """
+import os
 import pathlib
 import re
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+# The plugin is a checkout of the main branch: PLUGIN_ROOT, or the folder the script is run from.
+ROOT = pathlib.Path(os.environ.get('PLUGIN_ROOT') or pathlib.Path.cwd()).resolve()
+if not (ROOT / '.claude-plugin' / 'plugin.json').is_file():
+    sys.exit('run this from a checkout of the main branch, or set PLUGIN_ROOT to one')
 MAIN = 'global-law'
 OTHERS = ['law-change-trace', 'citation-check']
 NOTE = '<!-- Generated from skills/ by scripts/build_gemini_md.py. Edit the skills, then run it. -->\n\n'

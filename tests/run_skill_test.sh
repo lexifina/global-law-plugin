@@ -3,7 +3,7 @@
 # skill fired, which MCP tools it called, and the answer.   tests/run_skill_test.sh <name> "<question>" <out dir>
 set -u
 HERE="$(cd "$(dirname "$0")" && pwd)"
-PLUGIN="$(cd "$HERE/.." && pwd)"
+PLUGIN="$(cd "${PLUGIN_ROOT:-$PWD}" && pwd)"
 name="$1"; question="$2"
 mkdir -p "$3"; out="$(cd "$3" && pwd)"
 PY=$(command -v python || command -v python3)

@@ -1,3 +1,2 @@
-tests/results/
 __pycache__/
-dist/
+tests/results/

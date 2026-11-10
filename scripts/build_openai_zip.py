@@ -8,6 +8,7 @@ portal takes), with skills/, README.md, LICENSE and the icon. The other clients'
 Limits follow OpenAI's plugin submission reference as of November 2026.
 """
 import json
+import os
 import pathlib
 import re
 import struct
@@ -15,7 +16,10 @@ import sys
 import urllib.request
 import zipfile
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+# The plugin is a checkout of the main branch: PLUGIN_ROOT, or the folder the script is run from.
+ROOT = pathlib.Path(os.environ.get('PLUGIN_ROOT') or pathlib.Path.cwd()).resolve()
+if not (ROOT / '.claude-plugin' / 'plugin.json').is_file():
+    sys.exit('run this from a checkout of the main branch, or set PLUGIN_ROOT to one')
 SOURCE = ROOT / 'openai'
 ICON = ROOT / '.claude-plugin' / 'icon.png'
 # Category titles the portal's check accepted on upload (November 2026). It refused Research and Business.

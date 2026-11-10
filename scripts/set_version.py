@@ -4,11 +4,15 @@
     python scripts/set_version.py --check   exit 1 unless every file states the same version
 """
 import json
+import os
 import pathlib
 import re
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+# The plugin is a checkout of the main branch: PLUGIN_ROOT, or the folder the script is run from.
+ROOT = pathlib.Path(os.environ.get('PLUGIN_ROOT') or pathlib.Path.cwd()).resolve()
+if not (ROOT / '.claude-plugin' / 'plugin.json').is_file():
+    sys.exit('run this from a checkout of the main branch, or set PLUGIN_ROOT to one')
 JSON_FILES = ['.claude-plugin/plugin.json', '.cursor-plugin/plugin.json', '.codex-plugin/plugin.json',
               '.grok-plugin/plugin.json', 'gemini-extension.json', 'openai/plugin.json']
 MARKETPLACE = '.claude-plugin/marketplace.json'

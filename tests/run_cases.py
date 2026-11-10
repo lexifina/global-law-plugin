@@ -10,6 +10,7 @@ least one in `any_tools` was called, and there is an answer. Exit code 1 if any 
 command and network access to the hosted server; each case is one paid model run.
 """
 import json
+import os
 import pathlib
 import shutil
 import subprocess
@@ -17,7 +18,9 @@ import sys
 import tempfile
 
 HERE = pathlib.Path(__file__).resolve().parent
-PLUGIN = HERE.parent
+PLUGIN = pathlib.Path(os.environ.get('PLUGIN_ROOT') or pathlib.Path.cwd()).resolve()
+if not (PLUGIN / '.claude-plugin' / 'plugin.json').is_file():
+    sys.exit('run this from a checkout of the main branch, or set PLUGIN_ROOT to one')
 sys.path.insert(0, str(HERE))
 from summarize import parse, summary  # noqa: E402
 
