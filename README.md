@@ -2,13 +2,19 @@
 
 # Global law plugin
 
-The hosted **Global law** MCP server, packaged for Claude Code, Cursor, Gemini CLI and Grok Build, with skills that answer legal questions from the **Global law** record: the
+The hosted **Global law** MCP server, packaged for Claude Code, Codex, Cursor, Gemini CLI and Grok Build, with skills that answer legal questions from the **Global law** record: the
 law of about 200 countries kept as a dated history. Every change is dated the day it took effect and
 names the law that made it, so any provision can be read as it stood on any date, with a link to the
 official text.
 
 The skills use the hosted **Global law MCP server** at `https://global-law.lexifina.com/mcp`. It needs no
 account, no key and no download.
+
+[![Install in Cursor](https://img.shields.io/badge/Install_in-Cursor-000000)](https://cursor.com/en/install-mcp?name=global-law&config=eyJ1cmwiOiJodHRwczovL2dsb2JhbC1sYXcubGV4aWZpbmEuY29tL21jcD9jbGllbnQ9Y3Vyc29yLWJ1dHRvbiJ9)
+[![Install in VS Code](https://img.shields.io/badge/Install_in-VS_Code-007ACC)](https://vscode.dev/redirect/mcp/install?name=global-law&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fglobal-law.lexifina.com%2Fmcp%3Fclient%3Dvscode-button%22%7D)
+[![Release](https://img.shields.io/github/v/release/lexifina/global-law-plugin)](https://github.com/lexifina/global-law-plugin/releases)
+
+![Claude Code answering how Article 1 of the German Basic Law changed since 1949, from the record](assets/demo.png)
 
 | Skill | Use it for |
 | --- | --- |
@@ -27,8 +33,21 @@ account, no key and no download.
 
 Server only: `claude mcp add --transport http global-law https://global-law.lexifina.com/mcp`
 
-**Cursor**: install **Global law** from the Cursor Marketplace, or add the server in Settings → MCP with the URL above
-(`mcp.json` in this repo: `{"mcpServers": {"global-law": {"url": "https://global-law.lexifina.com/mcp"}}}`).
+Commands: `/global-law:law-on-date`, `/global-law:law-changes`, `/global-law:check-citations`, `/global-law:law-for-case`.
+
+**Codex** (plugin: the server and the skills)
+
+```
+codex plugin marketplace add lexifina/global-law-plugin
+codex plugin add global-law@global-law
+```
+
+Server only: `codex mcp add global-law --url https://global-law.lexifina.com/mcp`
+
+**Cursor**: use the button above, install **Global law** from the Cursor Marketplace, or add the server in Settings → MCP with the URL above
+(`{"mcpServers": {"global-law": {"url": "https://global-law.lexifina.com/mcp"}}}`).
+
+**VS Code**: use the button above, or run **MCP: Add Server** and give the URL.
 
 **Gemini CLI**
 
@@ -40,10 +59,13 @@ gemini extensions install https://github.com/lexifina/global-law-plugin
 
 **Cline**: in the MCP Servers panel, add a remote server named `global-law` with the URL above (see [llms-install.md](llms-install.md)).
 
-**Any other MCP client** (Claude.ai, ChatGPT, VS Code, Zed, ...): add a remote MCP server with the URL above.
+**Any other MCP client** (Claude.ai, ChatGPT, Zed, ...): add a remote MCP server with the URL above.
 
 **Skills only**: copy a folder from `skills/` into `~/.claude/skills/` (or your agent's skills folder). The skills need
 the MCP server connected.
+
+The packaged addresses end in `?client=...` (for example `?client=plugin`). It only tells the server which
+packaging a call came from, for usage counts; the server is the same with or without it.
 
 ## Examples
 

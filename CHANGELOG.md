@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.0 (2026-11-10)
+
+- Codex: `.codex-plugin/plugin.json` and a Codex marketplace file (`.agents/plugins/marketplace.json`).
+- Grok Build: `.grok-plugin/plugin.json`.
+- Cursor: the manifest names its skills, commands and server file, and has a display name.
+- Commands: `law-on-date`, `law-changes`, `check-citations`, `law-for-case`.
+- README: install buttons for Cursor and VS Code, and a picture of an answer.
+- The packaged server addresses carry `?client=...`, so usage can be counted by packaging.
+
 ## 1.1.0 (2026-11-10)
 
 - Skills now use three more server tools: `list_provisions` (browse an act or a code), `what_else_changes`

@@ -16,7 +16,8 @@ Name only tools the server has. `tools/list` on `https://global-law.lexifina.com
 ## Releasing
 
 The version is written in `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json` (twice),
-`.cursor-plugin/plugin.json`, `gemini-extension.json` and each `SKILL.md`. Change all of them together, add
+`.cursor-plugin/plugin.json`, `.codex-plugin/plugin.json`, `.grok-plugin/plugin.json`,
+`gemini-extension.json` and each `SKILL.md`. Change all of them together, add
 the release to `CHANGELOG.md`, tag `vX.Y.Z` and publish a GitHub release.
 
 ## License

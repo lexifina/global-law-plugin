@@ -1,10 +1,10 @@
 {
   "name": "global-law",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "The law of nearly every country on earth, any date: read it, see what changed it, check citations.",
   "mcpServers": {
     "global-law": {
-      "httpUrl": "https://global-law.lexifina.com/mcp"
+      "httpUrl": "https://global-law.lexifina.com/mcp?client=gemini-extension"
     }
   },
   "contextFileName": "GEMINI.md"
